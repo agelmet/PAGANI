@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Ιωάννα Παγάνη | Συστημική Ψυχολόγος & Ψυχοθεραπεύτρια</title>
+    <title>Ιωαννα Παγανη/Ψυχολογος & Συστημικη Ψυχοθεραπευτρια</title>
     <meta name="description" content="Η Ιωάννα Παγάνη είναι αδειούχος Ψυχολόγος και Συστημική Ψυχοθεραπεύτρια στον Πειραιά. Ατομική, οικογενειακή θεραπεία, θεραπεία ζεύγους και παιδιών.">
     <meta name="keywords" content="Ψυχολόγος Πειραιάς, Συστημική Ψυχοθεραπεία, Ιωάννα Παγάνη, Ψυχοθεραπεύτρια, Θεραπεία Ζεύγους, Συμβουλευτική Γονέων, Σεξολογία">
     <meta name="author" content="Advon Media">
@@ -12,7 +12,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,47 +21,28 @@
             theme: {
                 extend: {
                     colors: {
-                        warm: {
-                            50: '#fcfaf9',
-                            100: '#f7f2ed',
-                            200: '#eee3d7',
-                            300: '#e0caba',
-                            400: '#cfa692',
-                            500: '#b87c62', 
-                            600: '#9d634d',
-                            700: '#835140',
-                            800: '#6d4538',
-                            900: '#5a3b31',
-                        }
+                        /* 60/30/10 Rule Implementation */
+                        sand: '#E8E1D9',         /* 60% Backgrounds */
+                        olive: {
+                            light: '#9CAF88',    /* 30% Primary Elements / Banners */
+                            deep: '#5E6738',     /* 10% Text & Buttons */
+                        },
+                        purewhite: '#FFFFFF'     /* Negative Space */
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['Lato', 'sans-serif'],
                         serif: ['Lora', 'serif'],
-                        display: ['Cinzel', 'serif'],
                     },
                     boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(184, 124, 98, 0.08)',
-                        'float': '0 30px 60px -20px rgba(184, 124, 98, 0.15)',
+                        'soft': '0 20px 40px -15px rgba(94, 103, 56, 0.1)',
                     },
                     animation: {
-                        'float': 'float 8s ease-in-out infinite',
-                        'float-slow': 'float 12s ease-in-out infinite',
-                        'marquee-left': 'marquee-left 60s linear infinite',
-                        'marquee-right': 'marquee-right 60s linear infinite',
-                        'spin-slow': 'spin 15s linear infinite',
+                        'marquee-slow': 'marquee 80s linear infinite',
                     },
                     keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotate(1deg)' },
-                        },
-                        'marquee-left': {
+                        marquee: {
                             '0%': { transform: 'translateX(0%)' },
                             '100%': { transform: 'translateX(-50%)' },
-                        },
-                        'marquee-right': {
-                            '0%': { transform: 'translateX(-50%)' },
-                            '100%': { transform: 'translateX(0%)' },
                         }
                     }
                 }
@@ -70,11 +51,17 @@
     </script>
 
     <style>
+        /* Base typography settings for readability */
+        body {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
         /* Warm, Elegant Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #fcfaf9; }
-        ::-webkit-scrollbar-thumb { background: #e0caba; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #cfa692; }
+        ::-webkit-scrollbar-track { background: #E8E1D9; }
+        ::-webkit-scrollbar-thumb { background: #9CAF88; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #5E6738; }
 
         /* Smooth Reveals */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -82,442 +69,424 @@
         .reveal-delay-1 { transition-delay: 0.15s; }
         .reveal-delay-2 { transition-delay: 0.3s; }
 
-        /* Glassmorphism - Warm */
-        .glass-warm {
-            background: rgba(252, 250, 249, 0.85);
+        /* Glassmorphism */
+        .glass-nav {
+            background: rgba(232, 225, 217, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         /* Infinite Marquee Containers */
-        .marquee-wrapper {
-            display: flex;
-            width: fit-content;
-        }
-        .marquee-container:hover .marquee-wrapper {
-            animation-play-state: paused;
-        }
+        .marquee-wrapper { display: flex; width: fit-content; }
+        .marquee-container:hover .marquee-wrapper { animation-play-state: paused; }
 
         /* Lightbox */
         #lightbox {
             opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            background: rgba(232, 225, 217, 0.95);
         }
         #lightbox.active { opacity: 1; pointer-events: auto; }
         #lightbox img { transform: scale(0.95); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
         #lightbox.active img { transform: scale(1); }
-
-        /* Custom shape masks */
-        .blob-shape {
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            animation: blob-morph 8s ease-in-out infinite alternate;
-        }
-        @keyframes blob-morph {
-            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            100% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-        }
     </style>
 
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-warm-50 text-warm-900 font-sans antialiased overflow-x-hidden selection:bg-warm-300 selection:text-warm-900">
+<body class="bg-sand text-olive-deep font-sans antialiased overflow-x-hidden selection:bg-olive-light selection:text-purewhite">
 
     <nav class="fixed w-full z-50 transition-all duration-500 py-4" id="navbar">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             
             <a href="#" class="flex flex-col items-start justify-center z-50 shrink-0 group">
-                <span class="font-display text-2xl md:text-3xl font-bold text-warm-900 tracking-tight group-hover:text-warm-600 transition-colors">Ιωάννα Παγάνη</span>
-                <span class="text-[0.65rem] tracking-[0.25em] text-warm-500 font-sans uppercase mt-1">ΣΥΣΤΗΜΙΚΗ ΨΥΧΟΛΟΓΟΣ</span>
+                <span class="font-serif text-2xl font-bold text-olive-deep tracking-tight group-hover:text-olive-light transition-colors">Ιωαννα Παγανη</span>
+                <span class="text-xs tracking-wider text-olive-deep font-sans uppercase">Συστημικη Ψυχοθεραπευτρια</span>
             </a>
 
-            <div class="hidden lg:flex items-center space-x-8 glass-warm px-8 py-3 rounded-full shadow-sm ml-auto mr-6 border border-warm-200">
-                <a href="#about" class="text-sm font-medium text-warm-700 hover:text-warm-500 transition-colors">ΠΡΟΦΙΛ</a>
-                <a href="#services" class="text-sm font-medium text-warm-700 hover:text-warm-500 transition-colors">ΥΠΗΡΕΣΙΕΣ</a>
-                <a href="#space" class="text-sm font-medium text-warm-700 hover:text-warm-500 transition-colors">ΧΩΡΟΣ</a>
-                <a href="#reviews" class="text-sm font-medium text-warm-700 hover:text-warm-500 transition-colors">ΕΜΠΕΙΡΙΕΣ</a>
+            <div class="hidden lg:flex items-center space-x-8 glass-nav px-8 py-3 rounded-full shadow-sm ml-auto mr-6">
+                <a href="#about" class="text-sm font-bold text-olive-deep hover:text-olive-light transition-colors">ΒΙΟΓΡΑΦΙΚΟ</a>
+                <a href="#approach" class="text-sm font-bold text-olive-deep hover:text-olive-light transition-colors">ΠΡΟΣΕΓΓΙΣΗ</a>
+                <a href="#services" class="text-sm font-bold text-olive-deep hover:text-olive-light transition-colors">ΥΠΗΡΕΣΙΕΣ</a>
+                <a href="#space" class="text-sm font-bold text-olive-deep hover:text-olive-light transition-colors">ΧΩΡΟΣ</a>
+                <a href="#reviews" class="text-sm font-bold text-olive-deep hover:text-olive-light transition-colors">ΕΙΠΑΝ ΓΙΑ ΕΜΑΣ</a>
             </div>
 
-            <a href="#contact" class="hidden lg:inline-flex px-8 py-3.5 bg-warm-600 text-white rounded-full text-sm font-bold tracking-wide hover:bg-warm-700 hover:shadow-float transition-all transform hover:-translate-y-1">
+            <a href="https://www.doctoranytime.gr/d/Psychologos/pagani-ioanna" target="_blank" class="hidden lg:inline-flex px-8 py-3.5 bg-olive-deep text-purewhite rounded-full text-sm font-bold tracking-wide hover:bg-olive-light transition-all transform hover:-translate-y-1">
                 ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
             </a>
 
-            <button class="lg:hidden glass-warm p-3 rounded-full text-warm-700 z-50 border border-warm-200" id="mobile-menu-btn">
+            <button class="lg:hidden glass-nav p-3 rounded-full text-olive-deep z-50" id="mobile-menu-btn">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="fixed inset-0 bg-warm-50/98 backdrop-blur-2xl z-40 flex-col items-center justify-center space-y-8 hidden opacity-0 transition-opacity duration-300">
-            <a href="#about" class="text-2xl font-serif text-warm-800 mobile-link">Προφίλ</a>
-            <a href="#services" class="text-2xl font-serif text-warm-800 mobile-link">Υπηρεσίες</a>
-            <a href="#space" class="text-2xl font-serif text-warm-800 mobile-link">Χώρος</a>
-            <a href="#reviews" class="text-2xl font-serif text-warm-800 mobile-link">Εμπειρίες</a>
-            <a href="#contact" class="px-10 py-4 bg-warm-600 text-white rounded-full text-lg font-bold mobile-link">Κλείστε Ραντεβού</a>
+        <div id="mobile-menu" class="fixed inset-0 bg-sand/98 backdrop-blur-2xl z-40 flex-col items-center justify-center space-y-8 hidden opacity-0 transition-opacity duration-300">
+            <a href="#about" class="text-2xl font-serif text-olive-deep font-bold mobile-link">Βιογραφικό</a>
+            <a href="#approach" class="text-2xl font-serif text-olive-deep font-bold mobile-link">Προσέγγιση</a>
+            <a href="#services" class="text-2xl font-serif text-olive-deep font-bold mobile-link">Υπηρεσίες</a>
+            <a href="#space" class="text-2xl font-serif text-olive-deep font-bold mobile-link">Χώρος</a>
+            <a href="#reviews" class="text-2xl font-serif text-olive-deep font-bold mobile-link">Είπαν για εμάς</a>
+            <a href="https://www.doctoranytime.gr/d/Psychologos/pagani-ioanna" target="_blank" class="px-10 py-4 bg-olive-deep text-purewhite rounded-full text-lg font-bold mobile-link">Κλείστε Ραντεβού</a>
         </div>
     </nav>
 
     <section id="home" class="relative min-h-[100svh] flex items-center pt-32 pb-20 px-6 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-warm-100 opacity-60 mix-blend-multiply"></div>
-            <img src="https://github.com/agelmet/PITTARAS/blob/main/Πιτταράς_Άγγελος_6.jpg?raw=true" class="w-full h-full object-cover opacity-20 filter blur-sm" alt="Background">
-            <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-warm-200/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
-            <div class="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-warm-300/30 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3"></div>
+        
+        <div class="absolute inset-0 z-0 bg-sand">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-30">
+                <source src="URL_TO_YOUR_VIDEO.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-sand/80 via-transparent to-sand/90"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            
-            <div class="reveal">
-                <span class="inline-block px-4 py-1.5 rounded-full border border-warm-300 bg-white/50 text-warm-700 text-xs font-bold tracking-widest mb-6 uppercase">
-                    ΣΥΣΤΗΜΙΚΗ ΨΥΧΟΘΕΡΑΠΕΙΑ & ΣΥΜΒΟΥΛΕΥΤΙΚΗ
-                </span>
-                
-                <h1 class="text-5xl lg:text-7xl font-display text-warm-900 leading-[1.1] mb-6">
-                    Κατανοώντας τον Εαυτό μέσα από το <span class="italic text-warm-600 font-serif">Δίκτυο των Σχέσεων.</span>
-                </h1>
-
-                <div class="block md:hidden relative w-full max-w-[320px] mx-auto mb-8 rounded-t-[8rem] rounded-b-[1.5rem] overflow-hidden shadow-float border-4 border-white glass-warm p-1.5 animate-float">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/pag1.jpg?raw=true" alt="Ιωάννα Παγάνη" class="w-full h-full object-cover object-top rounded-t-[7.5rem] rounded-b-xl">
-                </div>
-
-                <p class="text-lg md:text-xl text-warm-800 mb-10 max-w-lg leading-relaxed font-light">
-                    Ένας ασφαλής χώρος όπου το άτομο μπορεί να νοηματοδοτήσει τα συμπτώματά του, να διαχειριστεί τις συγκρούσεις και να ανακαλύψει την αυθεντική του ταυτότητα.
-                </p>
-                <div class="flex flex-wrap items-center gap-4">
-                    <a href="#contact" class="px-8 py-4 bg-warm-600 text-white rounded-full font-bold tracking-wide hover:bg-warm-700 transition-colors shadow-soft flex items-center gap-3 group">
-                        ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
-                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="relative h-[600px] w-full max-w-[500px] mx-auto lg:ml-auto reveal reveal-delay-2 hidden md:block">
-                <div class="absolute -top-10 -right-10 w-40 h-40 border border-warm-300 rounded-full animate-spin-slow opacity-50"></div>
-                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-warm-200 rounded-full animate-float-slow opacity-60 blur-2xl"></div>
-                
-                <div class="absolute inset-0 rounded-t-[12rem] rounded-b-[2rem] overflow-hidden shadow-float border-4 border-white glass-warm p-2 animate-float">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/pag1.jpg?raw=true" alt="Ιωάννα Παγάνη" class="w-full h-full object-cover object-top rounded-t-[11.5rem] rounded-b-[1.5rem]">
-                </div>
-
-                <div class="absolute bottom-16 -left-12 z-20 glass-warm px-6 py-4 rounded-2xl shadow-xl flex items-center gap-4 animate-[float_6s_ease-in-out_infinite_reverse]">
-                    <div class="w-12 h-12 rounded-full bg-warm-100 flex items-center justify-center text-warm-700 border border-warm-200">
-                        <i data-lucide="heart" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm font-bold text-warm-900">Ασφαλής Χώρος</p>
-                        <p class="text-xs text-warm-600">Ενσυναίσθηση & Αποδοχή</p>
-                    </div>
-                </div>
-            </div>
+        <div class="max-w-4xl mx-auto w-full text-center relative z-10 reveal">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-olive-deep leading-tight mb-8">
+                Εξερευνώντας τον Εαυτό μέσα από το Δίκτυο των Σχέσεων
+            </h1>
+            <p class="text-lg md:text-xl text-olive-deep/90 max-w-3xl mx-auto leading-relaxed font-light mb-10">
+                Ένας ασφαλής χώρος όπου τα συμπτώματα και οι συγκρούσεις αποκτούν νόημα, φωτίζονται νέα, λειτουργικά μοτίβα και δημιουργούνται δρόμοι για αυθεντικότητα και ψυχική ανθεκτικότητα.
+            </p>
+            <a href="https://www.doctoranytime.gr/d/Psychologos/pagani-ioanna" target="_blank" class="inline-flex px-10 py-4 bg-olive-deep text-purewhite rounded-full font-bold tracking-wide hover:bg-olive-light transition-colors shadow-soft items-center gap-3 group">
+                ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
+                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            </a>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 bg-white relative">
+    <section id="about" class="py-24 px-6 relative">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
             
-            <div class="lg:col-span-5 relative reveal hidden lg:block">
-                <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-soft blob-shape relative z-10 border-[8px] border-warm-50 bg-warm-100">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/pag2.jpg?raw=true" alt="Ιωάννα Παγάνη Πορτρέτο" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 mix-blend-multiply">
+            <div class="lg:col-span-5 relative reveal">
+                <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-soft relative z-10 border-8 border-purewhite bg-purewhite">
+                    <img src="https://github.com/agelmet/PAGANI/blob/main/pag2.jpg?raw=true" alt="Ιωάννα Παγάνη" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute top-1/2 -right-8 w-24 h-24 bg-warm-200 rounded-full blur-xl z-0"></div>
-                <div class="absolute -bottom-8 -left-8 w-32 h-32 border border-warm-300 rounded-full z-0"></div>
+                <div class="absolute -bottom-8 -left-8 w-full h-full bg-olive-light rounded-[2rem] z-0 opacity-20"></div>
             </div>
 
-            <div class="lg:col-span-7 reveal reveal-delay-2">
-                <span class="text-warm-500 font-bold tracking-widest text-sm mb-4 block uppercase">Η ΨΥΧΟΛΟΓΟΣ</span>
-                <h2 class="text-3xl md:text-5xl font-display text-warm-900 mb-8 leading-tight">Η Ιωάννα Παγάνη</h2>
+            <div class="lg:col-span-7 reveal reveal-delay-2 bg-purewhite p-10 md:p-14 rounded-[2rem] shadow-soft">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-olive-deep mb-8">Η Ιωάννα Παγάνη</h2>
                 
-                <div class="space-y-6 text-lg text-warm-800/80 font-light">
+                <div class="space-y-6 text-olive-deep/90 font-light">
                     <p>
-                        Η Ιωάννα Παγάνη είναι αδειούχος Ψυχολόγος (Αρ. Αδείας: 226358) και Συστημική Ψυχοθεραπεύτρια, διατηρώντας το ιδιωτικό της γραφείο στον Πειραιά. Είναι απόφοιτη του τμήματος Ψυχολογίας του <strong>Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών (Ε.Κ.Π.Α.)</strong>.
+                        Η Ιωάννα Παγάνη είναι Ψυχολόγος, με άδεια άσκησης επαγγέλματος (Αρ. Αδείας 226358) και Συστημική Ψυχοθεραπεύτρια.
                     </p>
                     <p>
-                        Η κλινική της εξειδίκευση βασίζεται σε ένα εντατικό, τετραετές πρόγραμμα Συστημικής Ψυχοθεραπείας και Συμβουλευτικής στο Κε.Σ.Με.Θ. (1.410 ώρες εκπαίδευσης και εποπτείας), το οποίο αποτελεί μέλος της <strong>Ευρωπαϊκής Εταιρείας Οικογενειακής Θεραπείας (E.F.T.A.)</strong> και της Εθνικής Εταιρείας Ψυχοθεραπείας Ελλάδος (Ε.Ε.Ψ.Ε.).
+                        Ολοκλήρωσε τις σπουδές της στο Τμήμα Ψυχολογίας του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών (Ε.Κ.Π.Α.) και συνέχισε την ειδίκευσή της στη Συστημική Ψυχοθεραπεία και Συμβουλευτική (1.410 ώρες εκπαίδευσης, πρακτικής άσκησης και εποπτείας) στο Κέντρο Συστημικής Μελέτης και Θεραπείας (Κε.Σ.Με.Θ.), το οποίο αποτελεί μέλος της Ευρωπαϊκής Εταιρείας Οικογενειακής Θεραπείας (E.F.T.A.) και της Εθνικής Εταιρείας Ψυχοθεραπείας Ελλάδος (Ε.Ε.Ψ.Ε.)
                     </p>
-                    
-                    <div class="block lg:hidden relative my-10 w-[85%] mx-auto aspect-[4/5] rounded-[2rem] overflow-hidden shadow-soft blob-shape border-[6px] border-warm-50 bg-warm-100">
-                        <img src="https://github.com/agelmet/PAGANI/blob/main/pag2.jpg?raw=true" alt="Ιωάννα Παγάνη Πορτρέτο" class="w-full h-full object-cover mix-blend-multiply">
-                    </div>
-
-                    <blockquote class="border-l-4 border-warm-400 pl-6 py-4 my-8 text-xl font-serif text-warm-900 italic bg-warm-50/50 rounded-r-2xl">
-                        "Η επαγγελματική της πορεία είναι πλούσια και πολυδιάστατη. Έχει εργαστεί θεραπευτικά με εφήβους και ενήλικες, προσφέροντας ψυχολογική αξιολόγηση και φροντίδα σε παιδιά και γονείς."
-                    </blockquote>
-                    
                     <p>
-                        Με βαθιά πίστη στη διά βίου μάθηση, επεκτείνει διαρκώς τις γνώσεις της (2025-2026) σε τομείς όπως η Συστημική Σεξολογία, η Σεξουαλική Διαπαιδαγώγηση και η Εφηβεία. Στο γραφείο της, <strong>είτε διά ζώσης είτε διαδικτυακά</strong>, δημιουργεί έναν ασφαλή χώρο όπου το άτομο μπορεί να ανακαλύψει την αυθεντική του ταυτότητα.
+                        Έχει επιπλέον εκπαίδευση, επίσης, στη Συστημική Σεξολογία και σε ζητήματα που αφορούν τους εφήβους.
+                    </p>
+                    <p>
+                        Διατηρεί το ιδιωτικό της γραφείο στο Νέο Κόσμο και τον Πειραιά, όπου παρέχει ατομική και ομαδική ψυχοθεραπεία σε εφήβους και ενήλικες, συμβουλευτική γονέων, καθώς και ψυχοθεραπεία ζεύγους, είτε διά ζώσης είτε διαδικτυακά.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-32 px-6 bg-warm-50 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(#e0caba_1px,transparent_1px)] [background-size:32px_32px] opacity-20"></div>
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-warm-200/40 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-20 reveal">
-                <span class="text-warm-600 font-bold tracking-widest text-sm uppercase">ΕΞΕΙΔΙΚΕΥΜΕΝΕΣ ΥΠΗΡΕΣΙΕΣ</span>
-                <h2 class="text-4xl md:text-6xl font-display text-warm-900 mt-4 mb-6">Τομείς Παρέμβασης</h2>
-                <div class="w-20 h-1 bg-warm-400 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                
-                <div class="md:col-span-7 bg-white rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden group shadow-sm hover:shadow-soft transition-all duration-700 border border-warm-100 reveal">
-                    <div class="absolute -right-12 -bottom-16 text-[14rem] font-display font-black text-warm-50 group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none z-0">01</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center mb-8">
-                            <i data-lucide="user" class="w-8 h-8 text-warm-600"></i>
-                        </div>
-                        <h3 class="text-3xl font-serif font-bold text-warm-900 mb-4">Ατομική Ψυχοθεραπεία, Άγχος & Ιδεοψυχαναγκασμοί</h3>
-                        <p class="text-warm-700/80 mb-8 leading-relaxed text-lg max-w-lg">
-                            Στις ατομικές συνεδρίες, το άγχος, οι ιδεοψυχαναγκασμοί και το τραύμα προσεγγίζονται μέσω της Συστημικής οπτικής. Δεν βλέπουμε το σύμπτωμα αποκομμένο, αλλά ως έναν τρόπο του οργανισμού να επικοινωνήσει μια βαθύτερη δυσκολία.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-4 py-1.5 bg-warm-50 border border-warm-200 text-warm-800 text-xs font-bold uppercase tracking-wider rounded-full">Ατομική (60')</span>
-                            <span class="px-4 py-1.5 bg-warm-50 border border-warm-200 text-warm-800 text-xs font-bold uppercase tracking-wider rounded-full">Άγχος & Στρες</span>
-                            <span class="px-4 py-1.5 bg-warm-50 border border-warm-200 text-warm-800 text-xs font-bold uppercase tracking-wider rounded-full">Burnout</span>
-                        </div>
-                    </div>
+    <section id="approach" class="py-24 px-6 bg-olive-light relative text-purewhite">
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-12 text-center text-olive-deep">Η Προσέγγιση</h2>
+            
+            <div class="space-y-12 text-olive-deep bg-purewhite p-10 md:p-16 rounded-[2.5rem] shadow-xl">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">Κατανοώντας τον Άνθρωπο ως Μέρος ενός Όλου</h3>
+                    <p class="font-light">
+                        Κάθε άνθρωπος που περνά την πόρτα της ψυχοθεραπείας φέρει μαζί του μια ολόκληρη ιστορία — όχι μόνο τη δική του, αλλά και όλων εκείνων που τον διαμόρφωσαν, τον αγάπησαν ή τον δυσκόλεψαν. Στη Συστημική προσέγγιση, δεν αντιμετωπίζουμε το άτομο ως μια απομονωμένη μονάδα, αλλά ως έναν ζωντανό κρίκο σε ένα ευρύτερο δίκτυο σχέσεων.
+                    </p>
                 </div>
 
-                <div class="md:col-span-5 bg-warm-800 rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden group shadow-lg transition-all duration-700 border border-warm-700 reveal reveal-delay-1">
-                    <div class="absolute -right-12 -bottom-16 text-[14rem] font-display font-black text-warm-900/50 group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none z-0">02</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-warm-700 rounded-2xl flex items-center justify-center mb-8 border border-warm-600">
-                            <i data-lucide="users" class="w-8 h-8 text-warm-100"></i>
-                        </div>
-                        <h3 class="text-3xl font-serif font-bold text-white mb-4">Σχέσεις, Θεραπεία Οικογένειας & Σεξολογία</h3>
-                        <p class="text-warm-100/80 mb-8 leading-relaxed text-lg">
-                            Παρέχεται εξειδικευμένος χώρος σε ζευγάρια και οικογένειες. Υποστηρίζονται άτομα στην αντιμετώπιση προβλημάτων της σεξουαλικής ζωής, χτίζοντας ουσιαστική οικειότητα.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-4 py-1.5 bg-warm-900/50 border border-warm-600 text-warm-50 text-xs font-bold uppercase tracking-wider rounded-full">Ζεύγος (60')</span>
-                            <span class="px-4 py-1.5 bg-warm-900/50 border border-warm-600 text-warm-50 text-xs font-bold uppercase tracking-wider rounded-full">Σεξολογία</span>
-                        </div>
-                    </div>
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">Από το Σύμπτωμα στο Νόημα</h3>
+                    <p class="font-light">
+                        Η ψυχική μας υγεία είναι άρρηκτα συνδεδεμένη με το πλαίσιο στο οποίο ζούμε και εξελισσόμαστε. Για μένα, η προσέγγιση του ατόμου δεν γίνεται ποτέ αποσπασματικά· το να κατανοήσουμε έναν άνθρωπο σημαίνει να κατανοήσουμε το «σύστημα» μέσα στο οποίο αναπνέει: την οικογένεια, τις σχέσεις, την εργασία και τους ρόλους που καλείται να υπηρετήσει σε αυτά. Κάθε δυσκολία ή σύμπτωμα —είτε είναι το άγχος, η κατάθλιψη, είτε μια σύγκρουση— δεν είναι μια «βλάβη» που πρέπει απλώς να εξαλειφθεί. Είναι ένα μήνυμα, μια προσπάθεια του συστήματος να βρει μια νέα ισορροπία. Στη θεραπεία, το σύμπτωμα παύει να θεωρείται αδιέξοδο και μετατρέπεται σε μια ευκαιρία νοηματοδότησης.
+                    </p>
                 </div>
 
-                <div class="md:col-span-5 bg-warm-200 rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden group shadow-sm hover:shadow-soft transition-all duration-700 border border-warm-300 reveal">
-                    <div class="absolute -right-12 -bottom-16 text-[14rem] font-display font-black text-warm-100/60 group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none z-0">03</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-                            <i data-lucide="baby" class="w-8 h-8 text-warm-700"></i>
-                        </div>
-                        <h3 class="text-3xl font-serif font-bold text-warm-900 mb-4">Παιδί, Έφηβος & Συμβουλευτική Γονέων</h3>
-                        <p class="text-warm-800/80 mb-8 leading-relaxed text-lg">
-                            Υποστηρίζονται έφηβοι στην αναζήτηση ταυτότητας. Μέσω της Συμβουλευτικής Γονέων, οι γονείς εκπαιδεύονται ώστε να ανταποκρίνονται με ασφάλεια στις αναπτυξιακές ανάγκες.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-4 py-1.5 bg-white border border-warm-300 text-warm-900 text-xs font-bold uppercase tracking-wider rounded-full">Παιδιά - Έφηβοι</span>
-                            <span class="px-4 py-1.5 bg-white border border-warm-300 text-warm-900 text-xs font-bold uppercase tracking-wider rounded-full">Γονείς</span>
-                        </div>
-                    </div>
+                <div class="bg-sand/30 p-8 rounded-2xl border border-sand">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Η Θεραπευτική Διαδικασία ως Συμπορεία</h3>
+                    <p class="font-light mb-4">
+                        Η θεραπεία είναι μια συνεργατική εμπειρία που απαιτεί χρόνο, σεβασμό και θάρρος. Μαζί εξερευνούμε τα μοτίβα που επαναλαμβάνονται, τις σιωπηλές συμφωνίες και τις ιστορίες που σας έχουν ειπωθεί για το ποιοι είστε. Σε αυτή τη διαδρομή:
+                    </p>
+                    <ul class="space-y-3 font-light list-none">
+                        <li class="flex items-start gap-3">
+                            <span class="text-olive-light font-bold mt-1">•</span>
+                            <span><strong>Δεν εστιάζουμε στο «γιατί»:</strong> Εστιάζουμε στο «πώς» σχετίζεστε και επικοινωνείτε σήμερα.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-olive-light font-bold mt-1">•</span>
+                            <span><strong>Δεν αναζητούμε το «λάθος»:</strong> Ανακαλύπτουμε τη δυναμική για αλλαγή που κρύβεται μέσα σε κάθε κρίση.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-olive-light font-bold mt-1">•</span>
+                            <span><strong>Δεν δίνουμε έτοιμες συνταγές:</strong> Συν-δημιουργούμε ένα νέο πλαίσιο, όπου η αυθεντικότητα βρίσκει χώρο να αναπνεύσει.</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="md:col-span-7 bg-white rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden group shadow-sm hover:shadow-soft transition-all duration-700 border border-warm-100 reveal reveal-delay-1">
-                    <div class="absolute -right-12 -bottom-16 text-[14rem] font-display font-black text-warm-50 group-hover:scale-110 transition-transform duration-700 pointer-events-none select-none z-0">04</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center mb-8">
-                            <i data-lucide="monitor-smartphone" class="w-8 h-8 text-warm-600"></i>
-                        </div>
-                        <h3 class="text-3xl font-serif font-bold text-warm-900 mb-4">Διαδικτυακή Ψυχοθεραπεία (Online)</h3>
-                        <p class="text-warm-700/80 mb-8 leading-relaxed text-lg max-w-lg">
-                            Για τη μέγιστη διευκόλυνσή σας, όλες οι υπηρεσίες προσφέρονται και διαδικτυακά. Εξασφαλίζεται η συνέχεια της θεραπευτικής σας πορείας, διατηρώντας στο ακέραιο την ποιότητα και την εχεμύθεια ανεξάρτητα από τον τόπο διαμονής σας.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-4 py-1.5 bg-warm-50 border border-warm-200 text-warm-800 text-xs font-bold uppercase tracking-wider rounded-full">Βιντεοκλήση (60')</span>
-                            <span class="px-4 py-1.5 bg-warm-50 border border-warm-200 text-warm-800 text-xs font-bold uppercase tracking-wider rounded-full">Επαναληπτική Συνεδρία</span>
-                        </div>
-                    </div>
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">Η Δύναμη της Πολυφωνίας</h3>
+                    <p class="font-light">
+                        Στο επίκεντρο της δουλειάς μου βρίσκεται η πολυφωνία: η δυνατότητα να ακούσουμε όλες τις «φωνές» και τις πτυχές του εαυτού σας, αγκαλιάζοντας την πολυπλοκότητα της ανθρώπινης εμπειρίας. Αλλάζοντας την οπτική μας για το σύστημα, δημιουργούμε τον χώρο για να αναδυθούν νέες δυνατότητες και λύσεις που μέχρι τώρα παρέμεναν αθέατες. Μέσα από αυτή την ασφαλή σχέση, σας ενθαρρύνω να αμφισβητήσετε τα παλιά σενάρια και να «ξαναγράψετε» την ιστορία σας. Είναι μια βαθιά μετακίνηση που συμβαίνει όταν αρχίζετε να βλέπετε τον εαυτό σας με νέα μάτια μέσα στον ιστό των σχέσεών σας, διεκδικώντας τελικά μια ζωή με περισσότερο νόημα, σύνδεση και εσωτερική αρμονία.
+                    </p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="space" class="py-24 px-6 bg-white relative">
+    <section id="services" class="py-24 px-6 relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <span class="text-warm-600 font-bold tracking-widest text-sm uppercase">ΤΟ ΠΕΡΙΒΑΛΛΟΝ ΜΑΣ</span>
-                <h2 class="text-4xl md:text-5xl font-display text-warm-900 mt-4 mb-6">Ο Χώρος Θεραπείας</h2>
-                <p class="text-warm-700 max-w-2xl mx-auto">Ένα περιβάλλον σχεδιασμένο για να αποπνέει ηρεμία, ζεστασιά και απόλυτη ιδιωτικότητα. Κάντε κλικ για μεγέθυνση.</p>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-olive-deep mb-4">Υπηρεσίες</h2>
+                <div class="w-16 h-1 bg-olive-light mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-purewhite p-10 rounded-[2rem] shadow-sm hover:shadow-soft transition-shadow border border-purewhite reveal">
+                    <div class="w-14 h-14 bg-olive-light/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="user" class="w-7 h-7 text-olive-deep"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-olive-deep mb-4">Ατομική Ψυχοθεραπεία Ενηλίκων</h3>
+                    <p class="text-olive-deep/80 font-light">
+                        Μια διαδρομή αυτοανακάλυψης που εστιάζει στην παρατήρηση και κατανόηση των προσωπικών σας μοτίβων. Μαζί φωτίζουμε πώς οι σχέσεις, το παρελθόν και το περιβάλλον σας επηρεάζουν το σήμερα, δουλεύοντας πάνω σε αιτήματα όπως το άγχος, η κατάθλιψη, το τραύμα, το πένθος, οι διατροφικές διαταραχές και η αναζήτηση ταυτότητας.
+                    </p>
+                </div>
+
+                <div class="bg-purewhite p-10 rounded-[2rem] shadow-sm hover:shadow-soft transition-shadow border border-purewhite reveal reveal-delay-1">
+                    <div class="w-14 h-14 bg-olive-light/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="users" class="w-7 h-7 text-olive-deep"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-olive-deep mb-4">Θεραπεία Ζεύγους & Συστημική Σεξολογία</h3>
+                    <p class="text-olive-deep/80 font-light">
+                        Ένας ασφαλής χώρος για το ζευγάρι, όπου η εστίαση μετατοπίζεται από την ατομική ευθύνη στη δυναμική της σχέσης. Δουλεύουμε πάνω στην επικοινωνία, τη διαχείριση συγκρούσεων, καθώς και σε θέματα σεξουαλικής υγείας και οικειότητας, με στόχο μια πιο αυθεντική σύνδεση.
+                    </p>
+                </div>
+
+                <div class="bg-purewhite p-10 rounded-[2rem] shadow-sm hover:shadow-soft transition-shadow border border-purewhite reveal reveal-delay-2">
+                    <div class="w-14 h-14 bg-olive-light/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="smile" class="w-7 h-7 text-olive-deep"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-olive-deep mb-4">Ψυχοθεραπεία Εφήβων</h3>
+                    <p class="text-olive-deep/80 font-light">
+                        Στήριξη των εφήβων στις προκλήσεις της μετάβασης προς την ενηλικίωση. Μέσα από μια συμπεριληπτική προσέγγιση, εξερευνούμε ζητήματα ταυτότητας, ορίων, σχέσεων και κοινωνικοποίησης, βοηθώντας τον έφηβο να βρει τη δική του φωνή μέσα στο οικογενειακό και κοινωνικό σύστημα.
+                    </p>
+                </div>
+
+                <div class="bg-purewhite p-10 rounded-[2rem] shadow-sm hover:shadow-soft transition-shadow border border-purewhite reveal lg:col-span-1 md:col-start-1 lg:col-start-auto">
+                    <div class="w-14 h-14 bg-olive-light/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="heart-handshake" class="w-7 h-7 text-olive-deep"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-olive-deep mb-4">Συμβουλευτική Γονέων</h3>
+                    <p class="text-olive-deep/80 font-light">
+                        Υποστήριξη των γονέων στο σύνθετο ρόλο τους. Στόχος είναι η ενδυνάμωση της γονεϊκής σχέσης και η εκπαίδευση σε νέους τρόπους επικοινωνίας και οριοθέτησης, ώστε να δημιουργηθεί ένα λειτουργικό και υποστηρικτικό περιβάλλον για την ανάπτυξη των παιδιών.
+                    </p>
+                </div>
+
+                <div class="bg-purewhite p-10 rounded-[2rem] shadow-sm hover:shadow-soft transition-shadow border border-purewhite reveal reveal-delay-1 lg:col-span-2 md:col-start-2 lg:col-start-auto">
+                    <div class="w-14 h-14 bg-olive-light/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="monitor-smartphone" class="w-7 h-7 text-olive-deep"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-olive-deep mb-4">Online Ψυχοθεραπεία</h3>
+                    <p class="text-olive-deep/80 font-light max-w-2xl">
+                        Η δυνατότητα διεξαγωγής συνεδριών εξ αποστάσεως, διατηρώντας το ίδιο πλαίσιο ασφάλειας, δεοντολογίας και θεραπευτικής συμμαχίας. Μια επιλογή που εκμηδενίζει τις γεωγραφικές αποστάσεις, προσφέροντας πρόσβαση στη θεραπεία από την άνεση του προσωπικού σας χώρου.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="space" class="py-24 px-6 bg-purewhite relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-olive-deep mb-4">Ο Χώρος</h2>
+                <div class="w-16 h-1 bg-olive-light mx-auto rounded-full"></div>
             </div>
 
             <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal shadow-md" onclick="openLightbox('https://github.com/agelmet/PITTARAS/blob/main/Πιτταράς_Άγγελος_6.jpg?raw=true')">
-                    <img src="https://github.com/agelmet/PITTARAS/blob/main/Πιτταράς_Άγγελος_6.jpg?raw=true" alt="Χώρος Γραφείου 1" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-warm-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="w-10 h-10 text-white"></i>
+                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-1453.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-1453.jpeg?raw=true" alt="Χώρος 1" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
                 </button>
                 
-                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal reveal-delay-1 shadow-md" onclick="openLightbox('https://github.com/agelmet/PITTARAS/blob/main/Πιτταράς_Άγγελος_7.jpg?raw=true')">
-                    <img src="https://github.com/agelmet/PITTARAS/blob/main/Πιτταράς_Άγγελος_7.jpg?raw=true" alt="Χώρος Γραφείου 2" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-warm-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="w-10 h-10 text-white"></i>
+                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal reveal-delay-1 shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-2361.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-2361.jpeg?raw=true" alt="Χώρος 2" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
                 </button>
 
-                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal reveal-delay-2 shadow-md" onclick="openLightbox('https://github.com/agelmet/PITTARAS/blob/main/Πιτταράς_Άγγελος_9.jpg?raw=true')">
-                    <img src="https://github.com/agelmet/PITTARAS/blob/main/Πιτταράς_Άγγελος_9.jpg?raw=true" alt="Χώρος Γραφείου 3" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-warm-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-lucide="zoom-in" class="w-10 h-10 text-white"></i>
+                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal reveal-delay-2 shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-7750.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-7750.jpeg?raw=true" alt="Χώρος 3" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
+                    </div>
+                </button>
+
+                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-7874.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-7874.jpeg?raw=true" alt="Χώρος 4" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
+                    </div>
+                </button>
+
+                <button class="w-full break-inside-avoid rounded-[2rem] overflow-hidden group relative reveal reveal-delay-1 shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-8312.jpeg?raw=true')">
+                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-8312.jpeg?raw=true" alt="Χώρος 5" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
                 </button>
             </div>
         </div>
     </section>
 
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-warm-900/90 flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
-        <button class="absolute top-6 right-6 text-white/80 hover:text-white transition-colors">
+    <section class="py-24 px-6 bg-sand relative">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative reveal order-2 lg:order-1">
+                <div class="aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-soft border-8 border-purewhite bg-purewhite">
+                    <img src="https://github.com/agelmet/PAGANI/blob/main/asdfas.jpg?raw=true" alt="Μπουρίτο - Ο Συνθεραπευτής" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="reveal reveal-delay-1 bg-purewhite p-10 md:p-14 rounded-[2rem] shadow-soft order-1 lg:order-2">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-olive-deep mb-6">Ένας "Συνθεραπευτής" με ουρά!</h2>
+                <div class="space-y-6 text-olive-deep/90 font-light">
+                    <p>
+                        Στη συστημική προσέγγιση, κάθε στοιχείο του περιβάλλοντος επηρεάζει τη θεραπευτική διαδικασία. Στο γραφείο μου, αυτό το στοιχείο είναι ο Μπουρίτο/Burrito, το Λαμπραντόρ που φέρνει τη δική του δόση ηρεμίας, χαράς και άνευ όρων αποδοχής στον χώρο μας. 
+                    </p>
+                    <p>
+                        Με την ήρεμη παρουσία του, γίνεται συχνά ένας «σιωπηλός συνθεραπευτής». Η ειδικότητά του είναι να μειώνει το άγχος της πρώτης συνάντησης και να προσφέρει μια αίσθηση ασφάλειας που μόνο η απλή, αυθεντική σύνδεση μπορεί να δώσει. Χωρίς κριτική και χωρίς προσδοκίες, μας υπενθυμίζει τη σημασία του να «υπάρχουμε» στο παρόν, δημιουργώντας ένα πλαίσιο όπου μπορείτε να χαλαρώσετε και να συνδεθείτε πιο βαθιά με τα συναισθήματά σας.
+                    </p>
+                    <div class="mt-8 p-6 bg-sand rounded-xl border-l-4 border-olive-light">
+                        <p class="text-sm italic">
+                            <strong>Υ.Γ.</strong> Η άνεση και η ασφάλειά σας είναι προτεραιότητα για εμάς. Αν δεν είστε εξοικειωμένοι με τα κατοικίδια ή υπάρχει κάποια αλλεργία, επικοινωνήστε μαζί μας, κι έτσι ο Μπουρίτο θα σεβαστεί απόλυτα τον χώρο σας και δεν θα παρίσταται στη συνεδρία μας.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-olive-deep hover:text-olive-light transition-colors">
             <i data-lucide="x" class="w-10 h-10"></i>
         </button>
-        <img id="lightbox-img" src="" alt="Enlarged View" class="max-w-[90vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl cursor-default" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="" alt="Εικόνα Χώρου" class="max-w-[90vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl cursor-default" onclick="event.stopPropagation()">
     </div>
 
-    <section id="reviews" class="py-24 bg-warm-50 overflow-hidden border-t border-warm-100 relative">
+    <section id="reviews" class="py-24 bg-purewhite overflow-hidden border-y border-sand relative">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
-            <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" class="h-8 mx-auto mb-6">
-            <h2 class="text-4xl md:text-5xl font-display text-warm-900 mb-4">Εμπειρίες Θεραπευόμενων</h2>
-            <p class="text-warm-700 text-lg">Η εμπιστοσύνη σας είναι η μεγαλύτερη απόδειξη της δουλειάς μας.</p>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-olive-deep mb-4">Αξιολογήσεις Θεραπευόμενων</h2>
+            <p class="text-olive-deep/80 text-lg">Η εμπιστοσυνη σας ειναι η σπουδαιοτερη επιτυχια μας.</p>
         </div>
 
         <div class="w-full relative py-4">
-            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-warm-50 to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-warm-50 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-purewhite to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-purewhite to-transparent z-10 pointer-events-none"></div>
             
-            <div class="marquee-container mb-6 overflow-hidden flex">
-                <div class="marquee-wrapper animate-marquee-left flex space-x-6 px-3" id="review-track-1">
+            <div class="marquee-container overflow-hidden flex">
+                <div class="marquee-wrapper animate-marquee-slow flex space-x-6 px-3" id="review-track">
                     <script>
-                        const reviewsTop = [
-                            { name: 'Ισιδώρα', score: '10.0', text: 'Είναι ένας πολύ γλυκός και προσιτός άνθρωπος που σε κάνει να νιώθεις άνετα... Τη συστήνω ανεπιφύλακτα.', date: '09 Μαρτίου 2026' },
-                            { name: 'Δήμητρα', score: '10.0', text: 'Εξαιρετική επαγγελματίας με ήθος και συνέπεια και πάνω από όλα άνθρωπος που νιώθεις πως σε καταλαβαίνει βαθιά.', date: '07 Μαρτίου 2026' },
-                            { name: 'Maria', score: '10.0', text: 'Ένιωσα άνετα, ότι με άκουσε πραγματικά και με βοήθησε ουσιαστικά να βάλω τις σκέψεις μου σε τάξη.', date: '05 Μαρτίου 2026' },
-                            { name: 'Kostas', score: '10.0', text: 'Ξεχωρίζει για την επιστημονική της κατάρτιση όσο και για την αυθεντική ανθρώπινη προσέγγιση.', date: '25 Φεβρουαρίου 2026' },
-                            { name: 'George', score: '10.0', text: 'Κατάφερε να με βγάλει από ενα πολυ δυσκολο κομμάτι της ζωής μου. Άψογη επαγγελματίας.', date: '18 Φεβρουαρίου 2026' },
-                            { name: 'Varvara', score: '10.0', text: 'Δημιουργεί ένα ασφαλές περιβάλλον εμπιστοσύνης και με έχει βοηθήσει σημαντικά.', date: '16 Φεβρουαρίου 2026' },
-                            { name: 'Μαριαννα', score: '10.0', text: 'Κατευθείαν ένιωσα οικειότητα και μπόρεσα να μιλήσω για πράγματα για τα οποία μου ήταν πολύ δύσκολο.', date: '06 Φεβρουαρίου 2026' },
-                            { name: 'Dayana', score: '10.0', text: 'Από την πρώτη συνεδρία ένιωσα άνετα και ασφαλής να εκφραστώ, χωρίς καμία κριτική.', date: '27 Ιανουαρίου 2026' }
+                        const reviews = [
+                            { text: 'Είναι ένας πολύ γλυκός και προσιτός άνθρωπος που σε κάνει να νιώθεις άνετα από την πρώτη στιγμή και πραγματικά ακούει με προσοχή και ενδιαφέρον. Τη συστήνω ανεπιφύλακτα.' },
+                            { text: 'Εξαιρετική επαγγελματίας με ήθος και συνέπεια και πάνω από όλα άνθρωπος που νιώθεις πως σε καταλαβαίνει βαθιά. Εγω εχω βρει τον άνθρωπο που κούμπωσε μαζί μου.' },
+                            { text: 'Ένιωσα άνετα, ότι με άκουσε πραγματικά και με βοήθησε ουσιαστικά να βάλω τις σκέψεις μου σε τάξη. Ο χώρος ήταν πολύ ήρεμος και η ίδια εκπέμπει εμπιστοσύνη.' },
+                            { text: 'Ξεχωρίζει τόσο για την επιστημονική της κατάρτιση όσο και για την αυθεντική ανθρώπινη προσέγγιση που φέρνει σε κάθε συνεδρία. Τη συστήνω ανεπιφύλακτα.' },
+                            { text: 'Κατάφερε να με βγάλει από ενα πολυ δυσκολο κομμάτι της ζωής μου και την εκτιμώ αφάνταστα γιαυτό, εξαιρετικός άνθρωπος και άψογη επαγγελματίας.' },
+                            { text: 'Εξαιρετική επαγγελματίας με ενσυναίσθηση και ουσιαστικό ενδιαφέρον για τον άνθρωπο. Δημιουργεί ένα ασφαλές περιβάλλον εμπιστοσύνης.' },
+                            { text: 'Αν και είχα άγχος πριν από την πρώτη μας συνεδρία κατευθείαν ένιωσα οικειότητα και μπόρεσα να μιλήσω για πράγματα για τα οποία μου ήταν πολύ δύσκολο.' },
+                            { text: 'Εξαιρετικός/ή επαγγελματίας με πραγματικό ενδιαφέρον για τον άνθρωπο. Από την πρώτη συνεδρία ένιωσα άνετα και ασφαλής να εκφραστώ.' },
+                            { text: 'Με τρόπο ήρεμο αλλά διεισδυτικό, με βοήθησε να σταθώ σε σκέψεις και συναισθήματα που συνήθως προσπερνούσα. Δεν ένιωσα ποτέ κριτική.' },
+                            { text: 'Με άκουγε πραγματικά, με κατανόηση και ενσυναίσθηση. Η στάση της ήταν επαγγελματική και ανθρώπινη, και μου άφησε θετική αίσθηση για τη συνέχεια.' }
                         ];
 
                         const createReviewCard = (r) => `
-                            <div class="w-[350px] bg-white p-8 rounded-[2rem] shadow-sm shrink-0 border border-warm-100 flex flex-col justify-between relative overflow-hidden group hover:shadow-soft transition-shadow">
-                                <div class="absolute -top-4 -right-2 text-[8rem] font-serif leading-none text-warm-50 opacity-80 z-0 pointer-events-none group-hover:text-warm-100 transition-colors duration-500">"</div>
-                                <div class="relative z-10">
-                                    <div class="flex justify-between items-start mb-6">
-                                        <div>
-                                            <div class="flex items-center gap-1 text-warm-500 mb-1">
-                                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                            </div>
-                                            <span class="font-bold text-warm-900">${r.score} / 10</span>
-                                        </div>
-                                        <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-4 opacity-50" alt="DA">
-                                    </div>
-                                    <p class="text-warm-800 text-base mb-8 italic leading-relaxed font-serif">"${r.text}"</p>
-                                </div>
-                                <div class="border-t border-warm-100 pt-5 mt-auto relative z-10 flex justify-between items-end">
-                                    <div>
-                                        <p class="text-xs font-bold text-warm-900 uppercase tracking-widest">${r.name}</p>
-                                        <p class="text-xs text-warm-500 mt-1">${r.date}</p>
-                                    </div>
+                            <div class="w-[400px] bg-sand/30 p-10 rounded-[2rem] shrink-0 border border-sand flex flex-col justify-between">
+                                <p class="text-olive-deep text-lg mb-8 italic leading-relaxed font-light">"${r.text}"</p>
+                                <div class="mt-auto">
+                                    <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-5 opacity-50 grayscale" alt="Doctoranytime">
                                 </div>
                             </div>
                         `;
                         
-                        document.write(reviewsTop.map(createReviewCard).join(''));
-                        document.write(reviewsTop.map(createReviewCard).join(''));
-                    </script>
-                </div>
-            </div>
-
-            <div class="marquee-container overflow-hidden flex">
-                <div class="marquee-wrapper animate-marquee-right flex space-x-6 px-3" id="review-track-2">
-                    <script>
-                        const reviewsBottom = [
-                            { name: 'Yiola', score: '10.0', text: 'Με τρόπο ήρεμο αλλά διεισδυτικό, με βοήθησε να σταθώ σε σκέψεις και συναισθήματα που προσπερνούσα.', date: '18 Ιανουαρίου 2026' },
-                            { name: 'Mira', score: '10.0', text: 'Με άκουγε πραγματικά, με κατανόηση και ενσυναίσθηση. Την προτείνω ανεπιφύλακτα!', date: '18 Ιανουαρίου 2026' },
-                            { name: 'Άντζελα', score: '10.0', text: 'Η προσέγγισή της είναι ανθρώπινη και πρακτική οπότε με βοήθησε ουσιαστικά.', date: '15 Ιανουαρίου 2026' },
-                            { name: 'Marios', score: '9.8', text: 'Με έκανε να νιώσω πως μιλάω σε κάποιον φίλο μου και ότι μπορώ να μοιραστώ τα πάντα.', date: '08 Ιανουαρίου 2026' },
-                            { name: 'Ανθή', score: '10.0', text: 'Όταν φεύγω από την συνεδρία είμαι ήρεμη και έχω πάρει τη δύναμη που χρειάζομαι!', date: '08 Ιανουαρίου 2026' },
-                            { name: 'Στέλλα', score: '10.0', text: 'Από την πρώτη συνεδρία ένιωσα άνεση, ασφάλεια, κατανόηση και σεβασμό.', date: '08 Ιανουαρίου 2026' },
-                            { name: 'Σωτήρης', score: '10.0', text: 'Κέρδισε την εμπιστοσύνη μου. Ήδη νιώθω καλύτερα και πιο αισιόδοξος.', date: '06 Ιανουαρίου 2026' },
-                            { name: 'Τριανταφυλλιά', score: '10.0', text: 'Έχει τόσο θετική διάθεση, που σου μεταδίδει αισιοδοξία. Σωστή επαγγελματίας.', date: '16 Δεκεμβρίου 2025' },
-                            { name: 'Ιωάννης', score: '10.0', text: 'Δημιούργησε ένα ιδανικό κλίμα για να εξωτερικεύσω αυτά που ήθελα. Την συνιστώ ανεπιφύλακτα!', date: '15 Δεκεμβρίου 2025' }
-                        ];
-                        
-                        document.write(reviewsBottom.map(createReviewCard).join(''));
-                        document.write(reviewsBottom.map(createReviewCard).join(''));
+                        document.write(reviews.map(createReviewCard).join(''));
+                        document.write(reviews.map(createReviewCard).join('')); // Duplicate for seamless infinite scroll
                     </script>
                 </div>
             </div>
             
             <div class="text-center mt-16 reveal">
-                <a href="https://www.doctoranytime.gr/d/Psychologos/pittaras-aggelos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3.5 bg-white border border-warm-200 shadow-sm rounded-full text-sm font-bold text-warm-800 hover:shadow-soft transition-all hover:-translate-y-1">
-                    Διαβάστε όλες τις αξιολογήσεις στο <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-4 ml-1" alt="DA">
+                <a href="https://www.doctoranytime.gr/d/Psychologos/pagani-ioanna" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 bg-olive-deep text-purewhite rounded-full text-sm font-bold tracking-wide hover:bg-olive-light transition-colors">
+                    ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ 
+                    <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="h-4 filter brightness-0 invert" alt="DA">
                 </a>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-warm-900 text-warm-100 pt-24 pb-10 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-[40rem] h-[40rem] bg-warm-800/50 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+    <footer id="contact" class="bg-sand text-olive-deep pt-24 pb-10">
         
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20 border-b border-olive-light/30 pb-16">
                 
-                <div class="lg:col-span-2 reveal">
+                <div class="lg:col-span-5 reveal">
                     <div class="flex flex-col items-start mb-6">
-                        <span class="font-display font-bold text-3xl text-white">Ιωάννα Παγάνη</span>
-                        <span class="text-xs tracking-[0.2em] text-warm-300 font-sans uppercase mt-2">ΣΥΣΤΗΜΙΚΗ ΨΥΧΟΛΟΓΟΣ</span>
+                        <span class="font-serif font-bold text-3xl text-olive-deep">Ιωαννα Παγανη</span>
+                        <span class="text-xs tracking-widest text-olive-deep font-sans uppercase mt-1">Συστημικη Ψυχοθεραπευτρια</span>
                     </div>
-                    <p class="text-warm-200/80 max-w-sm mb-8 font-light leading-relaxed">
-                        Η επούλωση ξεκινά με ένα βήμα. Επικοινωνήστε μαζί μας για να ορίσουμε την πρώτη σας συνεδρία σε ένα περιβάλλον απόλυτης αποδοχής.
+                    <p class="text-olive-deep/90 max-w-md font-light leading-relaxed">
+                        Η αλλαγή ξεκινά κάνοντας μόλις το πρώτο βήμα. Επικοινωνήστε μαζί μας για να ορίσουμε την πρώτη σας συνεδρία σε ένα περιβάλλον αποδοχής και εξερεύνησης.
                     </p>
-                    <a href="https://www.doctoranytime.gr/d/Psychologos/pittaras-aggelos" target="_blank" class="inline-flex items-center justify-center bg-warm-500 text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-warm-900 transition-colors duration-300 shadow-lg group">
-                        <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" alt="Doctoranytime" class="h-4 mr-3 filter brightness-0 invert group-hover:invert-0 transition-all">
-                        Κλείστε Ραντεβού
-                    </a>
                 </div>
 
-                <div class="reveal reveal-delay-1">
-                    <h4 class="text-sm font-bold text-warm-400 mb-6 uppercase tracking-widest">ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h4>
-                    <ul class="space-y-5 text-warm-100/90">
+                <div class="lg:col-span-4 reveal reveal-delay-1">
+                    <h4 class="text-sm font-bold text-olive-deep mb-6 uppercase tracking-widest">ΕΠΙΚΟΙΝΩΝΙΑ</h4>
+                    <ul class="space-y-6 text-olive-deep/90">
                         <li class="flex items-start gap-4">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-warm-500 shrink-0 mt-1"></i>
-                            <div class="space-y-2">
-                                <p>25ης Μαρτίου,<br>Πειραιάς, Αττική</p>
-                                <p class="pt-2 border-t border-warm-800 mt-2">Μπακνανά,<br>Νέος Κόσμος, Αττική</p>
+                            <i data-lucide="map-pin" class="w-5 h-5 text-olive-light shrink-0 mt-1"></i>
+                            <div class="space-y-4">
+                                <a href="https://www.google.com/maps/place/%CE%9C%CF%80%CE%B1%CE%BA%CE%BD%CE%B1%CE%BD%CE%AC,+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1/@37.9537061,23.7188749,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bda9c5c60049:0x89420715ba7af5c8!8m2!3d37.953702!4d23.7237404!16s%2Fg%2F1tg2ymyl?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D 2" target="_blank" class="block hover:text-olive-light transition-colors">
+                                    Μπακνανά,<br>Νέος Κόσμος, Αττική
+                                </a>
+                                <a href="https://www.google.com/maps/place/25%CE%B7%CF%82+%CE%9C%CE%B1%CF%81%CF%84%CE%AF%CE%BF%CF%85,+%CE%9A%CE%B5%CF%81%CE%B1%CF" target="_blank" class="block pt-4 border-t border-olive-light/30 hover:text-olive-light transition-colors">
+                                    25ης Μαρτίου,<br>Πειραιάς, Αττική
+                                </a>
                             </div>
                         </li>
                         <li class="flex items-center gap-4 pt-2">
-                            <i data-lucide="phone" class="w-5 h-5 text-warm-500 shrink-0"></i>
-                            <a href="tel:+306984857887" class="hover:text-white text-lg transition-colors font-medium">+30 698 485 7887</a>
+                            <i data-lucide="phone" class="w-5 h-5 text-olive-light shrink-0"></i>
+                            <a href="tel:+306984857887" class="hover:text-olive-light transition-colors font-medium">+30 698 485 7887</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-5 h-5 text-olive-light shrink-0"></i>
+                            <a href="mailto:info@ioannapagani.gr" class="hover:text-olive-light transition-colors font-medium">info@ioannapagani.gr</a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="reveal reveal-delay-2">
-                    <h4 class="text-sm font-bold text-warm-400 mb-6 uppercase tracking-widest">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h4>
-                    <ul class="space-y-4 text-warm-100/90">
+                <div class="lg:col-span-3 reveal reveal-delay-2">
+                    <h4 class="text-sm font-bold text-olive-deep mb-6 uppercase tracking-widest">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h4>
+                    <ul class="space-y-4 text-olive-deep/90">
                         <li class="flex items-center gap-4">
-                            <i data-lucide="clock" class="w-5 h-5 text-warm-500 shrink-0"></i>
+                            <i data-lucide="clock" class="w-5 h-5 text-olive-light shrink-0"></i>
                             <span>ΔΕΥΤΕΡΑ - ΣΑΒΒΑΤΟ</span>
                         </li>
-                        <li class="pl-9 text-sm text-warm-400 font-bold uppercase tracking-widest">ΚΑΤΟΠΙΝ ΡΑΝΤΕΒΟΥ</li>
+                        <li class="pl-9 text-sm text-olive-deep font-bold uppercase tracking-widest">ΚΑΤΟΠΙΝ ΡΑΝΤΕΒΟΥ</li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="border-t border-warm-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 reveal">
-                <p class="text-warm-400 text-sm">© 2026 Ιωάννα Παγάνη. Όλα τα δικαιώματα διατηρούνται.</p>
-                <p class="text-warm-400 text-sm">
-                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-white font-bold hover:text-warm-500 transition-colors">Advon Media</a>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 reveal">
+                <p class="text-olive-deep/70 text-sm">© 2026 Ιωάννα Παγάνη. Όλα τα δικαιώματα διατηρούνται.</p>
+                <p class="text-olive-deep/70 text-sm">
+                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-olive-deep font-bold hover:text-olive-light transition-colors">Advon Media</a>
                 </p>
             </div>
         </div>
@@ -527,7 +496,7 @@
         // Initialize Icons
         lucide.createIcons();
 
-        // Mobile Menu
+        // Mobile Menu Logic
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -549,26 +518,22 @@
             });
         });
 
-        // Navbar Blur on Scroll
+        // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-warm-50/90', 'backdrop-blur-xl', 'shadow-sm');
+                navbar.classList.add('bg-sand/90', 'backdrop-blur-xl', 'shadow-sm');
                 navbar.classList.remove('py-4');
                 navbar.classList.add('py-2');
             } else {
-                navbar.classList.remove('bg-warm-50/90', 'backdrop-blur-xl', 'shadow-sm');
+                navbar.classList.remove('bg-sand/90', 'backdrop-blur-xl', 'shadow-sm');
                 navbar.classList.add('py-4');
                 navbar.classList.remove('py-2');
             }
         });
 
-        // Scroll Reveal
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
+        // Intersection Observer for Animations
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -578,21 +543,19 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Lightbox
+        // Lightbox Logic
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
-        function openLightbox(imageSrc) {
+        window.openLightbox = function(imageSrc) {
             lightboxImg.src = imageSrc;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeLightbox() {
+        window.closeLightbox = function() {
             lightbox.classList.remove('active');
             setTimeout(() => {
                 lightboxImg.src = '';
