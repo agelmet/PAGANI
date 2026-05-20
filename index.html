@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="el" class="scroll-smooth">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KNQNGL43');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MLC1TT5L3"></script> 
+    <script> 
+        window.dataLayer = window.dataLayer || []; 
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date()); 
+        gtag('config', 'G-2MLC1TT5L3'); 
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -94,6 +111,11 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-sand text-olive-deep font-sans antialiased overflow-x-hidden selection:bg-olive-light selection:text-purewhite relative">
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNQNGL43"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-500 py-4" id="navbar">
@@ -142,7 +164,7 @@
         <!-- MUX Video Background -->
         <div class="absolute inset-0 z-0 overflow-hidden bg-[#1a1a1a] pointer-events-none">
             <iframe 
-                src="https://player.mux.com/ZtSjVaDIIUQC702lkFw00JNx6BZCEii9fu004d006xB0064A?autoplay=true&muted=true&loop=true&controls=false"
+                src="https://player.mux.com/fyfV9xK818smgr01Y029doa2gi1YWU8Tx3MxdgWSKnCyo?autoplay=true&muted=true&loop=true&controls=false"
                 style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; transform: translate(-50%, -50%); border: none; pointer-events: none; z-index: 0;"
                 allow="autoplay; encrypted-media; picture-in-picture"
             ></iframe>
@@ -163,6 +185,7 @@
     <section id="about" class="py-24 px-6 relative">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
+            <!-- Fixed for Tablet (md) to not be overly huge -->
             <div class="lg:col-span-5 relative reveal w-full max-w-md md:max-w-lg lg:max-w-none mx-auto">
                 <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-soft relative z-10 border-8 border-purewhite bg-purewhite">
                     <img src="https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/ftoo%20repl.jpg" alt="Ιωάννα Παγάνη" class="w-full h-full object-cover">
@@ -317,38 +340,45 @@
                 </p>
             </div>
 
-            <!-- Symmetrical Flex Layout: 3 on top, 2 centered on bottom for Desktop -->
+            <!-- Symmetrical Flex Layout: 3 on top, 3 centered on bottom for Desktop -->
             <div class="flex flex-wrap justify-center gap-6">
-                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-1453.jpeg?raw=true')">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-1453.jpeg?raw=true" alt="Χώρος 1" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal shadow-md" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-9751.jpeg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-9751.jpeg" alt="Χώρος 1" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
                 </button>
                 
-                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal reveal-delay-1 shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-2361.jpeg?raw=true')">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-2361.jpeg?raw=true" alt="Χώρος 2" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal reveal-delay-1 shadow-md" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-8312.jpeg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-8312.jpeg" alt="Χώρος 2" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
                 </button>
 
-                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal reveal-delay-2 shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-7750.jpeg?raw=true')">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-7750.jpeg?raw=true" alt="Χώρος 3" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal reveal-delay-2 shadow-md" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-7874.jpeg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-7874.jpeg" alt="Χώρος 3" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
                 </button>
 
-                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-7874.jpeg?raw=true')">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-7874.jpeg?raw=true" alt="Χώρος 4" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal shadow-md" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-7750.jpeg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-7750.jpeg" alt="Χώρος 4" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
                 </button>
 
-                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal reveal-delay-1 shadow-md" onclick="openLightbox('https://github.com/agelmet/PAGANI/blob/main/Tezza-8312.jpeg?raw=true')">
-                    <img src="https://github.com/agelmet/PAGANI/blob/main/Tezza-8312.jpeg?raw=true" alt="Χώρος 5" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal reveal-delay-1 shadow-md" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-2361.jpeg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-2361.jpeg" alt="Χώρος 5" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
+                    </div>
+                </button>
+
+                <button class="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-[4/3] rounded-[2rem] overflow-hidden group relative reveal reveal-delay-2 shadow-md" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-1453.jpeg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/PAGANI/refs/heads/main/Tezza-1453.jpeg" alt="Χώρος 6" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-olive-deep/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i data-lucide="zoom-in" class="w-10 h-10 text-purewhite"></i>
                     </div>
